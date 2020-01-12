@@ -30,16 +30,21 @@ exports.logOut = function(req, res, next) {
 }
 
 
+var Profile = require("../models/profile")
 
 exports.home = function(req, res) {
   var name=req.user.name;
-
-  res.render('home.ejs', {
-    error: req.flash("error"),
-    success: req.flash("success"),
-    session: req.session,
-    name:name,
-
+  var email=req.user.mail;
+  Profile.find({
+    user_id:req.session.user._id
+  },function(err,result) {
+    if(err) throw err;
+    console.log("==================================");
+    
+    console.log(result);
+    res.render("home",{error: req.flash("error"),
+    success: req.flash("success"),result:result,session: req.session,
+      user:name,email:email});
   });
 
 }
@@ -64,8 +69,6 @@ exports.signup = function(req, res) {
 
 
 exports.login = function(req, res) {
-
-
 
   if (req.session.user) {
 

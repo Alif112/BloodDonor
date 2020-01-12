@@ -35,6 +35,7 @@ mongoose.connect(configDB.url); // connect to our database
 var userinfo=require('./routes/userinfo');
 var chat=require('./routes/chat');
 var index=require('./routes/index');
+var profile=require('./routes/profile');
 
 
 
@@ -59,7 +60,7 @@ app.use('/userinfo/update', express.static(path.join(__dirname, 'public'), optio
 app.use('/userinfo/delete', express.static(path.join(__dirname, 'public'), options));
 app.use('/chat/enter', express.static(path.join(__dirname, 'public'), options));
 app.use('/chat', express.static(path.join(__dirname, 'public'), options));
-
+app.use('/profile', express.static(path.join(__dirname, 'public'), options));
 
 app.set('views', path.join(__dirname, 'app/views'));
 app.set('view engine', 'ejs');
@@ -85,6 +86,7 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 app.use('/userinfo', userinfo);
 app.use('/chat', chat);
 app.use('/', index);
+app.use('/profile',profile);
 
 
 require('./config/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
