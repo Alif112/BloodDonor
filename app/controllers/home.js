@@ -2,7 +2,7 @@ var numeral = require('numeral');
 var bcrypt = require('bcrypt-nodejs');
 var dateFormat = require('dateformat');
 
-exports.loggedIn = function(req, res, next) {
+exports.loggedIn = function (req, res, next) {
   if (req.session.user) { // req.session.passport._id
     next();
 
@@ -14,14 +14,14 @@ exports.loggedIn = function(req, res, next) {
 
 }
 
-exports.logOut = function(req, res, next) {
+exports.logOut = function (req, res, next) {
   console.log('logout --------mama ');
   if (req.session.user) {
 
 
     req.logout();
     req.flash('success_msg', 'You are logged out');
-		req.session.destroy();
+    req.session.destroy();
     res.redirect('/login');
   } else {
     next();
@@ -32,25 +32,41 @@ exports.logOut = function(req, res, next) {
 
 var Profile = require("../models/profile")
 
-exports.home = function(req, res) {
-  var name=req.user.name;
-  var email=req.user.mail;
-  Profile.find({
-    user_id:req.session.user._id
-  },function(err,result) {
-    if(err) throw err;
+exports.home = function (req, res) {
+  var name = req.user.name;
+  var email = req.user.mail;
+  Profile.findOne({
+    user_id: req.session.user._id
+  }, function (err, result) {
+    if (err) throw err;
     console.log("==================================");
-    
     console.log(result);
-    res.render("home",{error: req.flash("error"),
-    success: req.flash("success"),result:result,session: req.session,
-      user:name,email:email});
+    if (result == null) {
+      res.render("home", {
+        error: req.flash("error"),
+        success: req.flash("success"),
+        session: req.session,
+        result:{},
+        user: name,
+        email: email
+      });
+
+    } else {
+      res.render("home", {
+        error: req.flash("error"),
+        success: req.flash("success"),
+        result: result,
+        session: req.session,
+        user: name,
+        email: email
+      });
+    }
   });
 
 }
 
 
-exports.signup = function(req, res) {
+exports.signup = function (req, res) {
 
   if (req.session.user) {
 
@@ -68,7 +84,7 @@ exports.signup = function(req, res) {
 }
 
 
-exports.login = function(req, res) {
+exports.login = function (req, res) {
 
   if (req.session.user) {
 

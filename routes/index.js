@@ -51,12 +51,10 @@ router.post('/profile', home.loggedIn, function (req, res, next) {
     }
     var data = profileSchema(mybodydata); 
     //var data = UsersModel(req.body);
-    data.save(function (err) {
+    data.updateOne(mybodydata,function (err) {
       if (err) {
-      
        res.render('profile',{message: 'User registered not successfully!'});
       } else {
-        
        res.render('profile',{message: 'User registered successfully!'});
       }
     })
