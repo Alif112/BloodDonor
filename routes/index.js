@@ -37,7 +37,7 @@ router.get('/getdonardata',home.loggedIn,function (req, res, next) {
       console.log(err);
       throw err;
     }
-		console.log(result);
+		// console.log(result);
 		res.send(result);
 	});
 })
