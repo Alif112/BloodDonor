@@ -108,9 +108,11 @@
                 <th >Name</th> 
                 <th >Blood Group</th> 
                 <th >Address</th> 
-                <th >Mobile No.</th>
+                <th >Last given</th>
             </tr>
         </thead>
+        <tbody>
+        </tbody>
     </table>
 </div>
 
@@ -132,8 +134,21 @@
    <script src="js/bootstrap.min.js"></script>
 
     <script>
-    $(document).ready(function() {
-    $('#example').DataTable();
+    $(document).ready(function () {
+            $.getJSON('/getdonardata', function (queryResult) {
+                $('#example').DataTable({
+                    responsive: true,
+                    data: queryResult,
+                    columns: [
+                        { data: "_id",targets: 0  },
+                        { data: "fullname",targets: 1  },
+                        { data: "bloodgroup",targets: 2  },
+                        { data: "address",targets: 3  },
+                        { data: "lastgiven",targets: 4 },
+                    ]
+                });
+            })
+    
 } );
     </script>
 

@@ -31,6 +31,17 @@ router.get('/indexicons',Index.indexicons);
 
 // router.get('/logout',home.loggedIn,Index.logout);
 
+router.get('/getdonardata',home.loggedIn,function (req, res, next) {
+  profileSchema.find({},function (err,result) {
+		if(err) {
+      console.log(err);
+      throw err;
+    }
+		console.log(result);
+		res.send(result);
+	});
+})
+
 router.get('/profile',home.loggedIn, Index.profile);
 router.post('/profile', home.loggedIn, function (req, res, next) {
     console.log(req.body);
@@ -63,7 +74,7 @@ router.post('/profile', home.loggedIn, function (req, res, next) {
 
 
 
-router.get('/finddonor',Index.finddonor);
+router.get('/finddonor',home.loggedIn,Index.finddonor);
 
 exports = module.exports =router;
 
