@@ -37,7 +37,7 @@ router.get('/getdonardata',home.loggedIn,function (req, res, next) {
       console.log(err);
       throw err;
     }
-		// console.log(result);
+		console.log(result);
 		res.send(result);
 	});
 })
@@ -62,7 +62,7 @@ router.post('/profile', home.loggedIn, function (req, res, next) {
     }
     var data = profileSchema(mybodydata); 
     //var data = UsersModel(req.body);
-    data.updateOne(mybodydata,function (err) {
+    data.updateOne(mybodydata,{upsert: true},function (err) {
       if (err) {
        res.render('profile',{message: 'User registered not successfully!'});
       } else {
