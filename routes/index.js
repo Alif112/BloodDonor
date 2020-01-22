@@ -46,8 +46,29 @@ router.get('/profile',home.loggedIn, Index.profile);
 router.post('/profile', home.loggedIn, function (req, res, next) {
     console.log(req.body);
     var user=req.session.user;
+    console.log("===============>");
     console.log(user);
 
+
+    // profileSchema.find({
+    //   user_id:user._id;
+    // },
+    // function(err, results) {
+    //   if (err) throw err;
+    //   if (results.toString() === '') {
+
+
+    //     res.redirect('/profile');
+    //   }
+    //   console.log(results);
+    //   res.render('home', {
+        
+    //   });
+    // });
+
+    var query = {
+    'user_id': user._id
+  };
   
     const mybodydata = {
             user_id:user._id,
@@ -62,7 +83,22 @@ router.post('/profile', home.loggedIn, function (req, res, next) {
     }
     var data = profileSchema(mybodydata); 
     //var data = UsersModel(req.body);
-    data.updateOne(mybodydata,function (err) {
+    profileSchema.findOneAndUpdate(query,{
+      $set:{
+            user_id:user._id,
+            fullname: req.body.fullname,
+            address: req.body.address,
+            district: req.body.district,
+            country: req.body.country,
+            bloodgroup: req.body.bloodgroup,
+            lastgiven: req.body.lastgiven,
+            medicalissue: req.body.medicalissue
+      }
+    },{
+      new: true,
+      upsert: true
+
+    },function (err,doc) {
       if (err) {
        res.render('profile',{message: 'User registered not successfully!'});
       } else {
