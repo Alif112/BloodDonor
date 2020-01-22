@@ -112,42 +112,47 @@
 <!-- ***** Breadcumb Area End ***** -->
 
 <!-- **** Table Started  ****-->
-<div class="col-md-8">
-    <table id="example" class="display" style="width:100%">
-        <thead>
-            <tr >
-                <th >Donor ID</th> 
-                <th >Name</th> 
-                <th >Blood Group</th> 
-                <th >Address</th> 
-                <th >Last given</th>
-                <th>Request</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
-</div>
-<!-- Modal -->
-<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
-        </div>
-        <div class="modal-body">
-          <p>Some text in the modal.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+<div class="container">
+        <div class="col-md-12">
+        <table id="example" class="display" style="width:100%">
+            <thead>
+                <tr >
+                    <th >Donor ID</th> 
+                    <th >Name</th> 
+                    <th >Blood Group</th> 
+                    <th >Address</th> 
+                    <th >Last given</th>
+                    <th>Request</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Not Now</h4>
+            </div>
+              <div class="container">
+                  <label for="comment"><h4>Request for Blood</h4></label>
+                  <textarea class="form-control" rows="1" id="Request">Emergency blood Needed</textarea>
+                </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success" data-dismiss="modal">Send Request</button>
+            </div>
+          </div>
+          
         </div>
       </div>
-      
-    </div>
-  </div>
+</div>
+
+
 
 <!-- **** Table Ended  ****-->
 
