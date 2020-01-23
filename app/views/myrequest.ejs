@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <!-- Title  -->
+  <title>Blood Bank Management System &amp; Home</title>
+
+  <!-- Favicon  -->
+  <link rel="icon" href="img/core-img/favicon.ico">
+
+  <!-- Style CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+    <style>
+    body{
+  margin-top: auto;
+    background-color: #f1f1f1;
+  }
+  .border{
+    border-bottom:1px solid #F1F1F1;
+    margin-bottom:10px;
+  }
+  .main-secction{
+    box-shadow: 10px 10px 10px;
+  }
+  .image-section{
+    padding: 0px;
+  }
+  .image-section img{
+    width: 100%;
+    height:250px;
+    position: relative;
+  }
+  .user-image{
+    position: absolute;
+    margin-top:-50px;
+  }
+  .user-left-part{
+    margin: 0px;
+  }
+  .user-image img{
+    width:100px;
+    height:100px;
+  }
+  .user-profil-part{
+    padding-bottom:30px;
+    background-color:#FAFAFA;
+  }
+  .follow{    
+    margin-top:70px;   
+  }
+  .user-detail-row{
+    margin:0px; 
+  }
+  .user-detail-section2 p{
+    font-size:12px;
+    padding: 0px;
+    margin: 0px;
+  }
+  .user-detail-section2{
+    margin-top:10px;
+  }
+  .user-detail-section2 span{
+    color:#7CBBC3;
+    font-size: 20px;
+  }
+  .user-detail-section2 small{
+    font-size:12px;
+    color:#D3A86A;
+  }
+  .profile-right-section{
+    padding: 20px 0px 10px 15px;
+    background-color: #FFFFFF;  
+  }
+  .profile-right-section-row{
+    margin: 0px;
+  }
+  .profile-header-section1 h1{
+    font-size: 25px;
+    margin: 0px;
+  }
+  .profile-header-section1 h5{
+    color: #0062cc;
+  }
+  .req-btn{
+    height:30px;
+    font-size:12px;
+  }
+  .profile-tag{
+    padding: 10px;
+    border:1px solid #F6F6F6;
+  }
+  .profile-tag p{
+    font-size: 12px;
+    color:black;
+  }
+  .profile-tag i{
+    color:#ADADAD;
+    font-size: 20px;
+  }
+  .image-right-part{
+    background-color: #FCFCFC;
+    margin: 0px;
+    padding: 5px;
+  }
+  .img-main-rightPart{
+    background-color: #FCFCFC;
+    margin-top: auto;
+  }
+  .image-right-detail{
+    padding: 0px;
+  }
+  .image-right-detail p{
+    font-size: 12px;
+  }
+  .image-right-detail a:hover{
+    text-decoration: none;
+  }
+  .image-right img{
+    width: 100%;
+  }
+  .image-right-detail-section2{
+    margin: 0px;
+  }
+  .image-right-detail-section2 p{
+    color:#38ACDF;
+    margin:0px;
+  }
+  .image-right-detail-section2 span{
+    color:#7F7F7F;
+  }
+
+  .nav-link{
+    font-size: 1.2em;    
+  }
+    
+
+  /*---------------------------------------table data */
+
+  .features-table {
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  text-shadow: 0 1px 0 #fff;
+  color: #2a2a2a;
+  background: #fafafa;  
+  background-image: linear-gradient(top, #fff, #eaeaea, #fff);
+}
+
+.features-table td {
+  height: 50px;
+  line-height: 50px;
+  padding: 0 20px;
+  border-bottom: 1px solid #cdcdcd;
+  box-shadow: 0 1px 0 white;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/*Body*/
+.features-table tbody td {
+  text-align: center;
+  font: normal 12px Verdana, Arial, Helvetica;
+  width: 150px;
+}
+
+.features-table tbody td:first-child {
+  width: auto;
+  text-align: left;
+}
+
+.features-table td:nth-child(2), 
+.features-table td:nth-child(3) {
+  background: #efefef;
+  background: rgba(144,144,144,0.15);
+  border-right: 1px solid white;
+}
+
+
+.features-table td:nth-child(4) {
+  background: #e7f3d4;  
+  background: rgba(184,243,85,0.3);
+}
+
+/*Header*/
+.features-table thead td {
+  font: bold 1.3em 'trebuchet MS', 'Lucida Sans', Arial;  
+  border-radius-topright: 10px;
+  border-radius-topleft: 10px; 
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top: 1px solid #eaeaea; 
+}
+
+.features-table thead td:first-child {
+  border-top: none;
+}
+
+/*Footer*/
+.features-table tfoot td {
+  font: bold 1.4em Georgia;  
+  border-radius-bottomright: 10px;
+  border-radius-bottomleft: 10px; 
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom: 1px solid #dadada;
+}
+
+.features-table tfoot td:first-child {
+  border-bottom: none;
+}
+
+  /*------------------------------------table data finished*/
+
+    </style>
+
+  </head>
+
+<body>
+<!-- Preloader -->
+<div id="preloader">
+    <div class="medilife-load"></div>
+  
+</div>
+
+<!-- ***** Header Area Start ***** -->
+<header class="header-area">
+    <!-- Top Header Area -->
+    <div class="top-header-area">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-12 h-100">
+                    <div class="h-100 d-md-flex justify-content-between align-items-center">
+                        <p>Welcome to <span>Blood Bank Management System</p>
+                        <p>Opening Hours : Monday to Sunday Contact : <span>+12-823-611-8721</span></p>
+                    </div>
+                </div>
+            </div>
+  ,      </div>
+    </div>
+
+
+<!-- Main Header Area -->
+<div class="main-header-area" id="stickyHeader">
+  <div class="container h-100">
+      <div class="row h-100 align-items-center">
+          <div class="col-12 h-100">
+              <div class="main-menu h-100">
+                  <nav class="navbar h-100 navbar-expand-lg">
+                      <!-- Logo Area  -->
+                      <a class="navbar-brand" href="/"><img src="img/core-img/c.png" alt="Logo"></a>
+
+                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medilifeMenu" aria-controls="medilifeMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+                      <div class="collapse navbar-collapse" id="medilifeMenu">
+                          <!-- Menu Area -->
+                          <ul class="navbar-nav ml-auto">
+                              <li class="nav-item active">
+                                  <a class="nav-link" href="/index">Home <span class="sr-only">(current)</span></a>
+                              </li>
+                              <li class="nav-item dropdown">
+                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                      <a class="dropdown-item" href="/finddonor">Find Donors</a>
+                                      <a class="dropdown-item" href="/logout">Log Out</a>
+                                      <a class="dropdown-item" href="/chat">Edit Profile</a>
+                                      
+                                  </div>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="/notification/getReceivedNotifications">Requestlist</a>
+                              </li>
+
+
+                              <li class="nav-item">
+                                  <a class="nav-link" href="/finddonor">Find Donors</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="/logout">Log Out</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="/profile">Edit Profile</a>
+                            </li>
+                          </ul>
+                          
+      </div>
+  </div> 
+</div>
+</header>
+<!-- ***** Header Area End ***** -->
+ <!-- ***** Breadcumb Area Start ***** -->
+ <section class="breadcumb-area bg-img gradient-background-overlay" style="background-image: url(img/bg-img/breadcumb1.jpg);">
+  <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcumb-content">
+                    <h3 class="breadcumb-title">My Request status</h3>
+                    <p>Search your donor with user id</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- ***** Breadcumb Area End ***** -->
+
+<body>
+
+<div class="container" style="margin-top:50px">
+    <div class="col-md-10" >
+      <table class="features-table">
+        <thead>
+          <tr>
+            <td>User ID</td>
+            <td>Status</td>
+          </tr>
+        </thead>
+    
+        <tbody>
+        
+          <%for(var i=0;i<result.length;i++){ %>
+          <tr>
+            <td><%=result[i].sender_id%></td>
+            <%if(result[i].status.match("Pending")){%>
+              <td><img src="pending.jpg" width="16" height="16" alt="check"></td>
+              <%}%>
+              <%if(result[i].status.match("Accepted")){%>
+              <td><img src="check.png" width="16" height="16" alt="check"></td>     
+              <%}%>
+              <%if(result[i].status.match("Rejected")){%>
+              <td><img src="cross.png" width="16" height="16" alt="check"></td>
+              <%}%>
+
+
+            </tr>
+
+          <%}%>
+      
+        </tbody>
+</table>
+    </div>
+    <div class="container" style="margin-top:50px">
+      
+    </div>
+
+</div>
+
+<!-- jQuery (Necessary for All JavaScript Plugins) -->
+<script src="/js/jquery/jquery-2.2.4.min.js"></script>
+<!-- Popper js -->
+<script src="/js/popper.min.js"></script>
+<!-- Bootstrap js -->
+<script src="/js/bootstrap.min.js"></script>
+<!-- Plugins js -->
+<script src="/js/plugins.js"></script>
+<!-- Active js -->
+<script src="/js/active.js"></script>
+
+</body>
+</html>

@@ -63,6 +63,8 @@ app.use('/chat/enter', express.static(path.join(__dirname, 'public'), options));
 app.use('/chat', express.static(path.join(__dirname, 'public'), options));
 app.use('/profile', express.static(path.join(__dirname, 'public'), options));
 app.use('/notification', express.static(path.join(__dirname, 'public'), options));
+app.use('/notification/createNotification', express.static(path.join(__dirname, 'public'), options));
+
 
 app.set('views', path.join(__dirname, 'app/views'));
 app.set('view engine', 'ejs');
