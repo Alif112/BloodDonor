@@ -150,7 +150,7 @@
             </div>
               <div class="container">
                   <label for="comment"><h4>Request for Blood</h4></label>
-                  <textarea class="form-control" rows="1" id="Request">Emergency blood Needed</textarea>
+                  <textarea id="message" class="form-control" rows="1" id="Request">Emergency blood Needed</textarea>
                 </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-success" data-dismiss="modal" onclick="sendRequest();">Send Request</button>
@@ -216,7 +216,14 @@
 
 
 function sendRequest() {
+    rowData["message"]=document.getElementById("message").innerHTML;
     console.log(rowData);
+    $.post("/notification/createNotification",
+    rowData,
+    function(data,status){
+        console.log(data,status);
+      alert("send SUccessfull "+data);
+    });
 }
 </script>
 
