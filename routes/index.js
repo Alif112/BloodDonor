@@ -83,7 +83,6 @@ router.post('/profile', home.loggedIn, function (req, res, next) {
     }
     var data = profileSchema(mybodydata); 
     //var data = UsersModel(req.body);
-<<<<<<< HEAD
     profileSchema.findOneAndUpdate(query,{
       $set:{
             user_id:user._id,
@@ -100,9 +99,6 @@ router.post('/profile', home.loggedIn, function (req, res, next) {
       upsert: true
 
     },function (err,doc) {
-=======
-    data.updateOne(mybodydata,{upsert: true},function (err) {
->>>>>>> d493a42c323e6a210460725ebb1fbc8f1b3d7700
       if (err) {
        res.render('profile',{message: 'User registered not successfully!'});
       } else {
