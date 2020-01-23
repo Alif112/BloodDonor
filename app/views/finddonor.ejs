@@ -194,7 +194,10 @@
                     responsive: true,
                     data: queryResult,
                     columns: [
-                        { data: "user_id",targets: 0  },
+                        { data: "user_id",targets: 0 ,
+                        "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
+                        $(nTd).html("<a href='/profile/"+oData.user_id+"'>"+oData.user_id+"</a>");
+                        }},
                         { data: "fullname",targets: 1  },
                         { data: "bloodgroup",targets: 2  },
                         { data: "address",targets: 3  },

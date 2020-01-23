@@ -65,6 +65,39 @@ exports.home = function (req, res) {
 
 }
 
+exports.profileData = function (req, res) {
+  console.log(req.params.id);
+  // res.send(req.params.id);
+  var name = req.user.name;
+  var email = req.user.mail;
+  Profile.findOne({
+    user_id: req.params.id
+  }, function (err, result) {
+    if (err) throw err;
+    console.log("==================================");
+    console.log(result);
+    if (result == null) {
+      res.render("home", {
+        error: req.flash("error"),
+        success: req.flash("success"),
+        session: req.session,
+        result:{},
+        user: name,
+        email: email
+      });
+
+    } else {
+      res.render("home", {
+        error: req.flash("error"),
+        success: req.flash("success"),
+        result: result,
+        session: req.session,
+        user: name,
+        email: email
+      });
+    }
+  });
+}
 
 exports.signup = function (req, res) {
 

@@ -32,6 +32,7 @@ router.get('/indexicons',Index.indexicons);
 
 
 router.get('/profile',home.loggedIn, Index.profile);
+router.get('/profile/:id',home.loggedIn, home.profileData);
 router.post('/profile', home.loggedIn, Index.editProfile);
 
 
