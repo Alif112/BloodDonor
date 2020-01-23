@@ -211,8 +211,10 @@
 
 
 function requestSend() {
-    console.log('ok');
-    
+    $('#example tbody').on('click', 'tr', function () {
+        var table = $('#example').DataTable();
+        console.log( table.row( this ).data() );
+    });
 }
     </script>
 
