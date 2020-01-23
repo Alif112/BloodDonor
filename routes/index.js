@@ -5,7 +5,6 @@ var home = require('../app/controllers/home');
 
 var Index = require('../app/controllers/index_controller');
 //var Chat= require('../app/controllers/chat_controller');
-var profileSchema=require('../app/models/profile');
 
 router.get('/',Index.enter);
 router.get('/index',Index.enter);
@@ -31,19 +30,6 @@ router.get('/indexicons',Index.indexicons);
 
 // router.get('/logout',home.loggedIn,Index.logout);
 
-router.get('/getdonardata',home.loggedIn,function (req, res, next) {
-  profileSchema.find({},function (err,result) {
-		if(err) {
-      console.log(err);
-      throw err;
-    }
-    console.log(result);
-    result=result.filter(el=>{
-      return el.user_id != req.session.user._id;
-    })
-		res.send(result);
-	});
-})
 
 router.get('/profile',home.loggedIn, Index.profile);
 router.post('/profile', home.loggedIn, Index.editProfile);
@@ -52,6 +38,6 @@ router.post('/profile', home.loggedIn, Index.editProfile);
 
 
 router.get('/finddonor',home.loggedIn,Index.finddonor);
-
+router.get('/getdonardata',home.loggedIn,Index.findAlldonor);
 exports = module.exports =router;
 

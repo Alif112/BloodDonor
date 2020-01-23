@@ -1,4 +1,6 @@
 
+var profileSchema=require('../models/profile');
+
 exports.enter = function(req, res, next){
 	res.render('index');
 };
@@ -31,6 +33,19 @@ exports.indexicons = function(req, res, next){
 exports.finddonor = function(req, res, next){
 	res.render("finddonor");
 };
+exports.findAlldonor =function (req, res, next) {
+	profileSchema.find({},function (err,result) {
+		  if(err) {
+		console.log(err);
+		throw err;
+	  }
+	  console.log(result);
+	  result=result.filter(el=>{
+		return el.user_id != req.session.user._id;
+	  })
+		  res.send(result);
+	  });
+}
 
 // exports.logout = function(req, res, next){
 // 	res.render("logout");
