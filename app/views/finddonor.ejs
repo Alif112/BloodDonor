@@ -153,7 +153,7 @@
                   <textarea class="form-control" rows="1" id="Request">Emergency blood Needed</textarea>
                 </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-success" data-dismiss="modal">Send Request</button>
+              <button type="button" class="btn btn-success" data-dismiss="modal" onclick="sendRequest();">Send Request</button>
             </div>
           </div>
           
@@ -187,9 +187,10 @@
    <script src="js/bootstrap.min.js"></script>
 
     <script>
+    var table,rowData;
     $(document).ready(function () {
             $.getJSON('/getdonardata', function (queryResult) {
-                $('#example').DataTable({
+                table = $('#example').DataTable({
                     responsive: true,
                     data: queryResult,
                     columns: [
@@ -200,23 +201,24 @@
                         { data: "lastgiven",targets: 4 },
                         {
                             data: 'user_id', targets: 5, 'render': function (data, type, row) {
-                              return '<button type="button" class="btn btn-info" data-toggle="modal" onclick="requestSend();" data-target="#myModal">Request</button>'
+                              return '<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Request</button>'
                             }
                         }
                     ]
                 });
-            })
+            });
+            $('#example tbody').on('click', 'tr', function () {
+            rowData=table.row( this ).data() ;
+            console.log(rowData);
+            });
     
 } );
 
 
-function requestSend() {
-    $('#example tbody').on('click', 'tr', function () {
-        var table = $('#example').DataTable();
-        console.log( table.row( this ).data() );
-    });
+function sendRequest() {
+    console.log(rowData);
 }
-    </script>
+</script>
 
 </body>
 

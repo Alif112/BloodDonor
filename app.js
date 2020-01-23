@@ -36,6 +36,7 @@ var userinfo=require('./routes/userinfo');
 var chat=require('./routes/chat');
 var index=require('./routes/index');
 var profile=require('./routes/profile');
+var notification = require("./routes/notification");
 
 
 
@@ -61,6 +62,7 @@ app.use('/userinfo/delete', express.static(path.join(__dirname, 'public'), optio
 app.use('/chat/enter', express.static(path.join(__dirname, 'public'), options));
 app.use('/chat', express.static(path.join(__dirname, 'public'), options));
 app.use('/profile', express.static(path.join(__dirname, 'public'), options));
+app.use('/notification', express.static(path.join(__dirname, 'public'), options));
 
 app.set('views', path.join(__dirname, 'app/views'));
 app.set('view engine', 'ejs');
@@ -87,6 +89,7 @@ app.use('/userinfo', userinfo);
 app.use('/chat', chat);
 app.use('/', index);
 app.use('/profile',profile);
+app.use('/notification',notification);
 
 
 require('./config/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
