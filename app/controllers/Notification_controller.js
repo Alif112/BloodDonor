@@ -43,3 +43,20 @@ exports.getSentUserNotification = function (req, res, next) {
         res.render('myrequest',{result:result});
     })
 }
+
+exports.notificationUpdate = function (req, res, next) {
+    console.log(req.body);
+    NotificationSchema.update({
+        _id: req.body.id
+    }, {
+        $set: {
+            status: req.body.status
+        }
+    }, function (err, doc) {
+        if (err) {
+            res.send("Not Updated");
+        } else {
+            res.send("Updated");
+        }
+    })
+}

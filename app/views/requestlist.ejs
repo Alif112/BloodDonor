@@ -257,8 +257,15 @@
       <td><%=result[i].sender_id%></td>
       <td><%=result[i].message%></td>
       <td >
-        <button type="button" class="btn btn-success">Accept</button>
-        <button type="button" class="btn btn-danger">Reject</button>
+      
+        <%if(result[i].status == "Pending"){%> 
+          <button type="button" class="btn btn-success" onclick='updateStatus("Accept","<%=result[i]._id%>")'>Accept</button>
+          <button type="button" class="btn btn-danger" onclick='updateStatus("Reject","<%=result[i]._id%>")'>Reject</button>
+        <%} else if(result[i].status == "Accept"){%>
+          <button type="button" class="btn btn-success" disabled>Accepted</button>
+        <%}else{%>
+          <button type="button" class="btn btn-danger" disabled>Rejected</button>
+        <%}%>
       </td>
     </tr>
     <%}%>
@@ -283,6 +290,22 @@
 <script src="/js/plugins.js"></script>
 <!-- Active js -->
 <script src="/js/active.js"></script>
+
+<script>
+function updateStatus(status,id) {
+  console.log(id);
+  $.post("/notification/notificationUpdate",
+    {
+      status:status,
+      id:id,
+    },
+    function(data,status){
+        console.log(status);
+        alert(data);
+    });
+}
+
+</script>
 
 </body>
 </html>
