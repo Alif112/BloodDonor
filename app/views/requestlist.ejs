@@ -254,7 +254,7 @@
     <%for(var i=0;i<result.length;i++){%>
     <tr>
       <th scope="row"><%=i+1%></th>
-      <td><%=result[i].sender_id%></td>
+      <td><a href="/profile/<%=result[i].sender_id%>" target="_blank"><%=result[i].sender_id%></a></td>
       <td><%=result[i].message%></td>
       <td >
       

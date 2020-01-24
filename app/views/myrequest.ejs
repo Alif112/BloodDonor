@@ -325,14 +325,14 @@
         
           <%for(var i=0;i<result.length;i++){ %>
           <tr>
-            <td><%=result[i].sender_id%></td>
+            <td><a href="/profile/<%=result[i].receiver_id%>" target="_blank"><%=result[i].receiver_id%></a></td>
             <%if(result[i].status.match("Pending")){%>
               <td><img src="pending.jpg" width="16" height="16" alt="check"></td>
               <%}%>
-              <%if(result[i].status.match("Accepted")){%>
+              <%if(result[i].status.match("Accept")){%>
               <td><img src="check.png" width="16" height="16" alt="check"></td>     
               <%}%>
-              <%if(result[i].status.match("Rejected")){%>
+              <%if(result[i].status.match("Reject")){%>
               <td><img src="cross.png" width="16" height="16" alt="check"></td>
               <%}%>
 
