@@ -54,9 +54,9 @@ exports.notificationUpdate = function (req, res, next) {
         }
     }, function (err, doc) {
         if (err) {
-            res.send("Not Updated");
+            res.send("Notification not Updated");
         } else {
-            res.send("Updated");
+            res.send("Notification Updated");
         }
     })
 }
