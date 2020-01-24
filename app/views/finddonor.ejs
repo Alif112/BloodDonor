@@ -219,13 +219,13 @@
 
 
 function sendRequest() {
-    rowData["message"]=document.getElementById("message").innerHTML;
+    rowData["message"]=document.getElementById("message").value;
     console.log(rowData);
     $.post("/notification/createNotification",
     rowData,
     function(data,status){
-        console.log(data,status);
-      alert("send SUccessfull "+data);
+        console.log(status);
+        alert(data);
     });
 }
 </script>
