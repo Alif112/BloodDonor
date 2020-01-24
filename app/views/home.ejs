@@ -246,7 +246,7 @@
                             <div class="row">
                                 <div class="col-md-8 col-sm-6 col-xs-6 profile-header-section1 pull-left">
                                     <h1><%=result.fullname%></h1>
-                                    <h5>Businessman</h5>
+                                    <h5><%=result.profession%></h5>
                                 </div>
                                 <div class="col-md-4 col-sm-6 col-xs-6 profile-header-section1 text-right pull-rigth">
                                     <a href="/finddonor" class="btn btn-primary btn-block">Find Blood Donor</a>
@@ -297,17 +297,17 @@
                                                                     <label>Contact Number</label>
                                                                 </div>
                                                                 <div class="col-md-6">
-                                                                    <p>0196457758</p>
+                                                                    <p><%=result.contactno%></p>
                                                                 </div>
                                                             </div>
-                                                            <div class="row">
+                                                            <!-- <div class="row">
                                                                 <div class="col-md-2">
                                                                     <label>Profession</label>
                                                                 </div>
                                                                 <div class="col-md-6">
-                                                                    <p>Businessman</p>
+                                                                    <p><></p>
                                                                 </div>
-                                                              </div>
+                                                              </div> -->
                                                             </div>
                                                 </div>
                                                 <div role="tabpanel" class="tab-pane fade" id="buzz">
@@ -332,7 +332,7 @@
                                                                     <label>Age</label>
                                                                 </div>
                                                                 <div class="col-md-6">
-                                                                    <p>30</p>
+                                                                    <p><%=result.age%></p>
                                                                 </div>
                                                             </div>
                                                             <div class="row">

@@ -103,7 +103,10 @@ exports.editProfile=function (req, res, next) {
             country: req.body.country,
             bloodgroup: req.body.bloodgroup,
             lastgiven: req.body.lastgiven,
-            medicalissue: req.body.medicalissue
+            medicalissue: req.body.medicalissue,
+            profession:req.body.profession,
+            age:req.body.age,
+            contactno:req.body.contactno
       }
     },{
       new: true,

@@ -10,7 +10,10 @@ var profileSchema = mongoose.Schema({
     country: String,
     bloodgroup:String,
     lastgiven:String,
-    medicalissue:String
+    medicalissue:String,
+    profession:String,
+    age:String,
+    contactno:String
 });
 module.exports = mongoose.model('user_profile', profileSchema);
 
